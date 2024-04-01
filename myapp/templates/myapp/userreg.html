@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter Goal</title>
+     <link rel="icon" href="{% static 'images/target.png' %}">
+    <style>
+        body {
+            background-color: aqua;
+        }
+        div {
+        margin: auto;
+        border: 4px solid black;
+        border-radius:15px;
+         width: 390px;
+         height: 350px;
+         align-items: center;
+         background-color: white;
+         }
+
+
+         input{
+         width: 200px;
+         }
+         .submit{
+         background-color: black;
+         color:white;
+         width:200px;
+         justify-content: center;
+         }
+    </style>
+</head>
+{% load static %}
+<body background="% static 'images/hunter_goal.png' %}">
+<img src="{% static 'images/hunter_goal.png' %}" alt="hunter_goal" />
+<br><br>
+<div>
+            <pre>
+                <h1>      Get Started Today</h1></pre>
+
+        <form name="register" method="post" action="../insertuser/" required>
+            {% csrf_token %}
+           <pre>
+          <b>Full Name</b>
+               <input type="text" name="fn" value="" width="300" required> <br>
+          <b>Email Address</b>
+               <input type="text" name="ei" value="" width="200" required> <br>
+          <b>Phone Number</b>
+               <input type="text" name="pn" value="" width="200" required> <br>
+          <b>Connect with us Regarding</b>
+               <input type="text" name="rg" list="cityname" required>
+                    <datalist id="cityname">
+                      <option value="Enquiry Regarding">
+                      <option value="Certification Courses">
+                      <option value="Job Guaranteed Courses">
+                      <option value="assessment Test">
+                      <option value="Internship / Jobs">
+                      <option value="Human Resource Management System">
+                    </datalist>
+               <input type="submit" name="reg" value="submit" width="5000" class="submit">
+
+            </pre>
+        </form>
+</div>
+</body>
+</html>
